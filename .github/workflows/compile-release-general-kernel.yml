@@ -45,11 +45,16 @@ on:
       kernel_toolchain:
         description: "Select the compilation toolchain"
         required: false
-        default: "gcc"
+        default: "gcc-13.3"
         type: choice
         options:
           - clang
           - gcc
+          - gcc-11.3
+          - gcc-12.2
+          - gcc-12.3
+          - gcc-13.2
+          - gcc-13.3
       compress_format:
         description: "Set the initrd compression format"
         required: false
@@ -88,7 +93,7 @@ on:
           - false
 
 env:
-  TZ: America/New_York
+  TZ: Europe/London
 
 jobs:
   build:

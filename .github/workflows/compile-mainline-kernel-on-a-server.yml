@@ -36,11 +36,6 @@ on:
         required: false
         default: true
         type: boolean
-      silent_log:
-        description: "Use silent logging"
-        required: false
-        default: true
-        type: boolean
       delete_source:
         description: "Delete the source after compilation"
         required: false
@@ -174,7 +169,7 @@ jobs:
           kernel_toolchain: ${{ inputs.kernel_toolchain }}
           kernel_config: ${{ inputs.kernel_config }}
           compress_format: ${{ inputs.compress_format }}
-          silent_log: ${{ inputs.silent_log }}
+          silent_log: true
 
       - name: Upload Kernel to Release
         uses: ncipollo/release-action@main
